@@ -1,0 +1,17 @@
+$cor-primaria: #332941;
+$cor-secundaria: #3b3486;
+$cor-terciaria: #864af9;
+$cor-quarternaria: #f8e559;
+$card-background: #fffefa;
+$search-color: #3b14c7;
+$clean-color: #a50000;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $card-background;
+}

@@ -1,0 +1,87 @@
+.missing-persons-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  .missing-persons-card {
+    flex: 1 0 calc(33.333% - 4%);
+    margin: 2%;
+    height: 74vh !important;
+    box-sizing: border-box;
+
+    .missing-persons-midias {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      .missing-persons-dialog-button {
+        width: auto;
+        height: 4vh;
+      }
+      .share-buttons {
+        width: 36px;
+        height: 36px;
+      }
+      .social-medias {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        gap: 20%;
+
+        .social-medias-button {
+          border: none;
+          outline: none;
+          background: transparent;
+          color: transparent;
+        }
+
+        .social-medias-button:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .missing-persons-photos {
+    width: calc(100% + 32px);
+    height: 450px;
+    object-fit: cover;
+    object-position: top !important;
+  }
+
+  .missing-persons-card h3 {
+    font-size: 20px;
+  }
+
+  .missing-persons-card p {
+    font-size: 16px;
+  }
+}
+
+.card-overflow {
+  overflow: scroll;
+}
+
+.missing-more-button-card {
+  display: flex;
+  justify-content: center;
+  .missing-more-button {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 1%;
+  }
+}
+
+@media (max-width: 600px) {
+  .missing-persons-content .missing-persons-card {
+    flex: 1 0 100%;
+    width: 80vw;
+    height: auto !important;
+    margin-bottom: 10%;
+  }
+
+  .missing-persons-dialog-button {
+    width: auto;
+    height: 5vh !important;
+  }
+}

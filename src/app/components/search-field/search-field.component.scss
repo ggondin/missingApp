@@ -1,0 +1,79 @@
+@import "../../../styles.scss";
+
+.search-color {
+  background-color: $search-color;
+  color: white;
+}
+
+.clean-color {
+  background-color: $clean-color;
+  color: white;
+}
+
+.input {
+  flex: 1;
+}
+
+.form-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+
+  max-width: 500px !important;
+  height: 450px !important;
+  width: 100% !important;
+  background-color: $card-background;
+  padding: 5%;
+
+  .search-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+  }
+
+  .search-input-infos, .search-input-age {
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .buttons-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    height: 100%;
+
+    .buttons {
+      width: 100% !important;
+      font-size: 12px;
+      margin: 1%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .form-content {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1%;
+  }
+
+  .form-content .search-input-infos, .form-content .search-input-age {
+    flex-direction: row;
+  }
+
+  .form-content .buttons-content .buttons {
+    width: 12vw;
+    height: 5vh;
+  }
+
+  .buttons p{
+    display: none;
+  }
+}

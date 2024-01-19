@@ -1,0 +1,55 @@
+<div class="about-card">
+  <h2>{{person.nome}}</h2>
+  <div class="about-content">
+    <div class="about-photo-card">
+      <h1>DESAPARECIDO</h1>
+      <img *ngIf="person.urlFoto; else unknownPerson" mat-card-image [src]="person.urlFoto"
+        alt="Foto da pessoa desaparecida" class="about-photo">
+      <ng-template #unknownPerson>
+        <img mat-card-image src="../../../assets/unknown.svg" alt="Foto de pessoa desconhecida" class="about-photo">
+      </ng-template>
+    </div>
+    <span class="about-infos">
+      <h3>Informações sobre a vítima</h3>
+      <p class="about-response-title">A vítima é {{person.sexo == 'FEMININO' ? 'Mulher' : 'Homem'}} e tem {{person.idade}} anos</p>
+      <p class="about-response">Ultima vez vista em {{person.ultimaOcorrencia?.localDesaparecimentoConcat || 'Sem Informação'}}</p>
+      <p class="about-response-title">Foi vista pela ultima vez dia</p>
+      <p class="about-response">{{person.ultimaOcorrencia?.dtDesaparecimento | date: 'dd-MM-yyy' || 'Sem Informação'}}</p>
+      <p class="about-response-title">Sobre a vitima</p>
+      <p class="about-response">{{person?.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO?.informacao || 'Sem Informação'}}</p>
+      <p class="about-response-title">Vestimenta quando desapareceu</p>
+      <p class="about-response"> {{person.ultimaOcorrencia.ocorrenciaEntrevDesapDTO?.vestimentasDesaparecido || 'Sem Informação'}}</p>
+    </span>
+
+
+  </div>
+  <div class="about-button-content">
+    <button (click)="closeDialog()" mat-flat-button class="buttons">
+      <mat-icon>closed</mat-icon>
+      FECHAR
+    </button>
+  </div>
+</div>
+
+
+
+<!-- {
+  "id": 6796,
+  "nome": "KEVIN MARCIO RODRIGUES DE CARVALHO",
+  "idade": 24,
+  "sexo": "MASCULINO",
+  "vivo": true,
+  "urlFoto": "https://s3.pjc.mt.gov.br/abitus.foto-pessoa/8b84084b9ed447e0ffc41c4a34ee179b39adbe8664f5b2f0bd421abd4c12ba14-1694467453764.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=pjcmtminio%2F20240119%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240119T024439Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa3a2e3cdc9a0dab55ca37eca5785f34496a5dbec5b0d460090ef766924bcef6",
+  "ultimaOcorrencia": {
+      "dtDesaparecimento": "2023-08-23T00:00:00",
+      "dataLocalizacao": null,
+      "encontradoVivo": true,
+      "localDesaparecimentoConcat": "PARQUE SAO JORGE - Rondonópolis/MT",
+      "ocorrenciaEntrevDesapDTO": {
+          "informacao": "Vítima saiu de casa na data acima e até o momento não retornou ou deu notícias.",
+          "vestimentasDesaparecido": "Short jeans e cropped rosa"
+      },
+      "listaCartaz": null,
+      "ocoId": 3449
+  }
+} -->

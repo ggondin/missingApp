@@ -1,0 +1,46 @@
+<form class="form-content">
+
+  <p class="search-title">Pesquise por pessoas desaparecidas no Mato Grosso</p>
+  <p>Preencha o formuário com os dados da pessoa que deseja.</p>
+
+  <div class="search-input-infos" style=" padding-right: 2%">
+    <mat-form-field  class="input" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="nome" name="nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Gênero</mat-label>
+      <mat-select [(ngModel)]="sexo" name="sexo">
+        <mat-option value="Masculino">Masculino</mat-option>
+        <mat-option value="Feminino">Feminino</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <h4 style="margin-bottom: 1%;">Faixa de idade</h4>
+
+  <div class="search-input-age" style=" padding-right: 2%">
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Idade Mínima</mat-label>
+      <input matInput type="number" placeholder="Insira a idade" min="0" [(ngModel)]="faixaIdadeInicial" name="faixaIdadeInicial">
+    </mat-form-field>
+
+    <mat-form-field class="input" appearance="fill">
+      <mat-label>Idade Máxima</mat-label>
+      <input matInput type="number" placeholder="Insira a idade" min="0" [(ngModel)]="faixaIdadeFinal" name="faixaIdadeFinal">
+    </mat-form-field>
+  </div>
+
+  <div class="buttons-content">
+
+    <button (click)="search()" [disabled]="!nome || !sexo || !faixaIdadeInicial || !faixaIdadeFinal" mat-flat-button class="buttons search-color">
+      <mat-icon>search</mat-icon>PESQUISAR
+    </button>
+    <button (click)="clean()" mat-flat-button class="buttons clean-color">
+      <mat-icon>closed</mat-icon>
+      LIMPAR
+    </button>
+  </div>
+
+</form>

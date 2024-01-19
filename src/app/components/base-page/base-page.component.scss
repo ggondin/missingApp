@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+.base-page-background {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .base-page-title {
+    display: flex;
+    justify-content: center;
+    margin: 2% 0;
+
+    font-size: 32px;
+    font-weight: 600;
+  }
+}

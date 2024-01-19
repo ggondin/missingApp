@@ -1,0 +1,42 @@
+<div class="missing-persons-content">
+  <mat-card *ngFor="let persons of peoples" class="missing-persons-card" [ngClass]="{'card-overflow': isLargeScreen}">
+    <h3><b>{{persons.nome}}</b></h3>
+    <img *ngIf="persons.urlFoto; else unknownPerson" mat-card-image [src]="persons.urlFoto"
+      alt="Foto da pessoa desaparecida" class="missing-persons-photos">
+    <ng-template #unknownPerson>
+      <img mat-card-image src="../../../assets/unknown.svg" alt="Foto de pessoa desconhecida"
+        class="missing-persons-photos">
+    </ng-template>
+    <mat-card-content>
+      <p><b>Idade:</b> {{persons.idade}} anos</p>
+      <p><b>Gênero:</b> {{persons.sexo}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+
+      <p>Compartilhe nas suas redes sociais!</p>
+      <div class="missing-persons-midias">
+        <div class="social-medias">
+          <button (click)="shareOnFacebook(persons)" class="social-medias-button">
+            <img class="share-buttons" src="../../../assets/facebook-logo.png"alt="Facebook">
+            </button>
+          <button (click)="instagramButton(persons.id)" class="social-medias-button">
+            <img class="share-buttons" src="../../../assets/instagram-logo.png" alt="Instagram">
+          </button>
+          <button (click)="sendWhatsAppMessage(persons)" class="social-medias-button">
+            <img class="share-buttons" src="../../../assets/whatsapp-logo.png" alt="WhatsApp">
+          </button>
+        </div>
+        <button class="missing-persons-dialog-button" mat-raised-button (click)="openDialog(persons.id)">Saiba
+          mais</button>
+      </div>
+
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="missing-more-button-card">
+
+  <button (click)="getMorePersons()" class="missing-more-button" mat-raised-button>CARREGAR MAIS</button>
+</div>
