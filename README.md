@@ -28,3 +28,5 @@ Execute `ng e2e` para executar os testes de ponta a ponta via Protractor.
 ## Ajuda
 
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou visite o [Angular CLI Overview and Command Reference](https://cli.angular.io/)[^4^][3].
+
+Atenciosamente, Gabriel!
